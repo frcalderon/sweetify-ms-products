@@ -1,5 +1,5 @@
 # Establecer la imagen base de Amazon Corretto con Java 17
-FROM amazoncorretto:17-alpine
+FROM amazoncorretto:17-al2-jdk
 
 # Establecer el directorio de trabajo de la aplicación
 WORKDIR /app

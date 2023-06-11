@@ -46,5 +46,5 @@ jobs:
       with:
         context: .
         push: true
-        platforms: linux/arm/v7
+        platforms: linux/amd64,linux/arm64/v8
         tags: frcalderon/sweetify-ms-products:${{ steps.getVersion.outputs.version }} , frcalderon/sweetify-ms-products:latest
