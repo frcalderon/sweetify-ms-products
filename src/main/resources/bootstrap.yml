@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    kubernetes:
+      config:
+        enabled: true
+        sources:
+          - namespace: sweetify
+            name: ms-products
+      reload:
+        enabled: true
+        strategy: restart_context
+        mode: event

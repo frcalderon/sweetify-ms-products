@@ -7,15 +7,6 @@ spring:
   profiles:
     active:
       - dev
-  cloud:
-    kubernetes:
-      config:
-        enabled: true
-      reload:
-        enabled: true
-        monitoring-config-maps: true
-        strategy: restart_context
-        mode: event
   security:
     oauth2:
       resourceserver:
