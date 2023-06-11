@@ -7,8 +7,15 @@ spring:
   profiles:
     active:
       - dev
-  config:
-    import: optional:configserver:http://config.sweetify.com/
+  cloud:
+    kubernetes:
+      config:
+        enabled: true
+      reload:
+        enabled: true
+        monitoring-config-maps: true
+        strategy: restart_context
+        mode: event
   security:
     oauth2:
       resourceserver:
