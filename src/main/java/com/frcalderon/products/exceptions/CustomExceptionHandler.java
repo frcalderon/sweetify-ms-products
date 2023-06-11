@@ -23,4 +23,30 @@ public class CustomExceptionHandler {
 
         return new ResponseEntity<>(exception, httpStatus);
     }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> handleIngredientHasProductsAssignedException(IngredientHasProductsAssignedException e) {
+        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+
+        CustomException exception = CustomException.builder()
+                .message(e.getMessage())
+                .httpStatus(httpStatus)
+                .timestamp(ZonedDateTime.now(ZoneId.of("Z")))
+                .build();
+
+        return new ResponseEntity<>(exception, httpStatus);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<Object> handleProductNotFoundException(ProductNotFoundException e) {
+        HttpStatus httpStatus = HttpStatus.NOT_FOUND;
+
+        CustomException exception = CustomException.builder()
+                .message(e.getMessage())
+                .httpStatus(httpStatus)
+                .timestamp(ZonedDateTime.now(ZoneId.of("Z")))
+                .build();
+
+        return new ResponseEntity<>(exception, httpStatus);
+    }
 }
